@@ -18,12 +18,12 @@ public class Address {
     }
 
     public Address(Address outsideAddress) {
-        this.houseNumber = outsideAddress.houseNumber;
-        this.streetName = outsideAddress.streetName;
-        this.apartmentNum = outsideAddress.apartmentNum;
-        this.cityName = outsideAddress.cityName;
-        this.stateName = outsideAddress.stateName;
-        this.zipCode = outsideAddress.zipCode;
+        this.houseNumber = outsideAddress.getHouseNumber();
+        this.streetName = outsideAddress.getStreetName();
+        this.apartmentNum = outsideAddress.getApartmentNum();
+        this.cityName = outsideAddress.getCityName();
+        this.stateName = outsideAddress.getStateName();
+        this.zipCode = outsideAddress.getZipCode();
     }
 
     // 1313 Mockingbird Lane Apt 6A, Springfield, MO 65123
@@ -106,5 +106,12 @@ public class Address {
         this.outsideAddress = outsideAddress;
     }
 
-    public 
+    public String toString(){
+        String address = streetName + " " + streetName + " ";
+        if (apartmentNum != null){
+            address += "Apt " + apartmentNum + ", ";
+        }
+        address += cityName + " " + zipCode;
+        return address;
+    }
 }
